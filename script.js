@@ -15,17 +15,18 @@ function setup() {
 function draw() {
   background(0);
 
-  scale(1)
+  scale(0.5)
   translate(-windowWidth/2,-windowHeight/2)
 
   noStroke();
   for (var i = 0; i < width; i += 5) {
-    for (var j = 0; j < height; j += 5) {
+    for (var j = 0; j < width; j += 5) {
       n = noise(i * w, j * w, t) * 2;
-      fill (mX*n, mY*n, 200, 100);
-      //rect(i+n+map(mX,0,width,-40,40), j+n+map(mY,0,height,-40,40), 15,15);
+      fill (map(mX,0,width,0,600)*n, map(mY,0,height,0,600)*n, 200, 100);
       
-      rect(i, j, 10,10);
+      rect(i+n+map(mX,0,width,-40,40), j+n+map(mY,0,height,-40,40), 15,15);
+      
+      //rect(i, j, 10,10);
 
     }
   }
