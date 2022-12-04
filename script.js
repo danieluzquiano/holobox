@@ -1,4 +1,3 @@
-
 "use strict";
 
 var mX, mY, t, w, n;
@@ -20,14 +19,14 @@ function draw() {
   translate(-windowWidth/2,-windowHeight/2)
 
   noStroke();
-  for (var i = 0; i < width; i += 5) {
-    for (var j = 0; j < width; j += 5) {
+  for (var i = 0; i < width; i += 10) {
+    for (var j = 0; j < width; j += 10) {
       n = noise(i * w, j * w, t) * 2;
         fill (mX*n, mY*n, 200, 100);
       rect(i+n+map(mX,0,width,-40,40), j+n+map(mY,0,height,-40,40), 15,15);
     }
   }
-  t += 0.009;
+  t += 0.008;
 
 }
 
