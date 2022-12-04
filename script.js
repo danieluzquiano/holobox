@@ -27,7 +27,7 @@ function draw() {
       rect(i+n+map(mX,0,width,-40,40), j+n+map(mY,0,height,-40,40), 15,15);
     }
   }
-  t += 0.02;
+  t += 0.009;
 
 }
 
